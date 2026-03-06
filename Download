@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Memories Keeper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+max-width:720px;
+margin:auto;
+padding:40px 20px;
+line-height:1.6;
+color:#333;
+}
+
+h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.tagline{
+font-size:18px;
+color:#666;
+margin-bottom:30px;
+}
+
+.section{
+margin-top:40px;
+}
+
+.footer{
+margin-top:60px;
+font-size:14px;
+color:#777;
+}
+</style>
