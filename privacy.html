@@ -3,144 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - Memories Keeper</title>
+  <title>Privacy Policy - Memory Keeper</title>
   <style>
     :root {
-      --bg: #f7f4ea;
-      --surface: #fffdf7;
-      --text: #1f2530;
-      --muted: #5e646f;
-      --line: #e4ddd0;
-      --brand: #0e5d4f;
-      --brand-2: #0a4b40;
+      --bg: #f7f8ff;
+      --text: #16152a;
+      --muted: #5e5a88;
+      --surface: #ffffff;
+      --line: #dfdcff;
+      --amber: #8f5cff;
+      --dark-amber: #463de0;
+      --warm-gold: #ff6b8f;
+      --sky: #1abdf5;
+      --teal: #0fd18f;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
       color: var(--text);
+      font-family: "Avenir Next", "Sora", "Trebuchet MS", sans-serif;
       background:
-        radial-gradient(circle at 10% 0%, #ffe7be 0, transparent 50%),
-        radial-gradient(circle at 90% 0%, #def1ec 0, transparent 46%),
-        var(--bg);
+        radial-gradient(circle at 10% -10%, #d9ceff 0, transparent 36%),
+        radial-gradient(circle at 90% -20%, #e4d2ff 0, transparent 42%),
+        linear-gradient(180deg, #f8f6ff 0%, #f1eeff 100%);
     }
 
     .container {
-      width: min(980px, 92vw);
+      width: min(1000px, 92vw);
       margin: 0 auto;
-      padding: 28px 0 72px;
+      padding: 30px 0 76px;
     }
 
     .topnav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 18px;
       margin-bottom: 34px;
     }
 
-    .brand { font-size: 22px; font-weight: 800; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 22px;
+      font-weight: 800;
+    }
 
-    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .brand-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--amber), var(--warm-gold));
+      box-shadow: 0 0 0 5px rgba(143, 92, 255, 0.12);
+    }
+
+    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .nav-links a {
       text-decoration: none;
-      color: var(--muted);
-      font-weight: 600;
+      color: #4f4a7b;
+      font-weight: 700;
       font-size: 14px;
-      padding: 8px 12px;
       border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid transparent;
     }
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      background: #f1ece1;
-      color: var(--text);
+      border-color: #cbc4ff;
+      color: var(--dark-amber);
+      background: #f2efff;
       outline: none;
     }
 
     .panel {
-      background: var(--surface);
-      border: 1px solid var(--line);
       border-radius: 30px;
-      padding: clamp(24px, 5vw, 40px);
-      box-shadow: 0 12px 36px rgba(30, 44, 33, 0.08);
+      border: 1px solid #cdc4ff;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(143, 92, 255, 0.18), transparent 42%),
+        radial-gradient(circle at 0% 100%, rgba(70, 61, 224, 0.16), transparent 44%),
+        #ffffff;
+      padding: clamp(24px, 5vw, 42px);
+      box-shadow: 0 18px 52px rgba(76, 63, 210, 0.14);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(34px, 8vw, 52px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      font-size: clamp(34px, 8vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
     }
 
     .intro {
+      margin: 12px 0 0;
+      max-width: 760px;
       color: var(--muted);
       font-size: 18px;
-      margin: 12px 0 0;
     }
 
     .updated {
-      margin: 18px 0 0;
+      margin: 16px 0 0;
       display: inline-block;
-      background: #eef6f2;
-      border: 1px solid #d5e6de;
-      color: #355146;
       border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .02em;
+      font-size: 12px;
       text-transform: uppercase;
+      letter-spacing: .04em;
+      font-weight: 800;
+      color: #463de0;
+      background: #f1ebff;
+      border: 1px solid #d2c6ff;
+      padding: 7px 11px;
     }
 
     .item {
-      padding-top: 22px;
-      margin-top: 22px;
-      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e0ddff;
     }
 
     .item h2 {
-      margin: 0 0 8px;
+      margin: 0 0 7px;
       font-size: 22px;
       letter-spacing: -0.01em;
     }
 
     .item p {
       margin: 0;
-      color: var(--muted);
+      color: #5a5686;
+      font-size: 15px;
       line-height: 1.7;
-      font-size: 16px;
     }
 
     a {
-      color: var(--brand);
+      color: var(--dark-amber);
       text-underline-offset: 2px;
+      font-weight: 700;
     }
 
     .footer {
       margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      border-top: 1px solid #d8d4fb;
       display: flex;
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
-      color: var(--muted);
+      color: #5d5a86;
       font-size: 14px;
     }
 
     .footer a {
+      color: #5d5a86;
       text-decoration: none;
-      color: var(--muted);
       margin-left: 14px;
+      font-weight: 700;
     }
 
-    .footer a:hover { color: var(--text); }
+    .footer a:hover { color: var(--dark-amber); }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .topnav {
         flex-direction: column;
         align-items: flex-start;
@@ -151,7 +176,7 @@
 <body>
   <div class="container">
     <header class="topnav">
-      <div class="brand">Memories Keeper</div>
+      <div class="brand"><span class="brand-dot" aria-hidden="true"></span>Memory Keeper</div>
       <nav class="nav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="download.html">Download</a>
@@ -162,47 +187,47 @@
 
     <main class="panel">
       <h1>Privacy Policy</h1>
-      <p class="intro">Memories Keeper is built to keep your memories personal, private, and under your control.</p>
+      <p class="intro">Memory Keeper is privacy-first by design. Your memories are tied to your Apple ecosystem and remain under your control.</p>
       <p class="updated">Last updated: March 2026</p>
 
       <section class="item">
-        <h2>On-device storage</h2>
-        <p>Your memory content is stored locally on your device using Apple-supported storage technologies.</p>
+        <h2>Local-first storage</h2>
+        <p>Memories are stored locally on your device for core use, without requiring third-party memory hosting.</p>
       </section>
 
       <section class="item">
-        <h2>Encrypted iCloud sync</h2>
-        <p>If you enable iCloud sync, your data is synchronized through your personal iCloud account using Apple's security systems.</p>
+        <h2>iCloud sync when enabled</h2>
+        <p>If you turn on iCloud sync, your content is synchronized through your personal Apple account using Apple's security systems.</p>
       </section>
 
       <section class="item">
-        <h2>No third-party memory servers</h2>
-        <p>Memories Keeper does not run third-party servers for storing your entries, photos, or recordings.</p>
+        <h2>User-controlled sharing</h2>
+        <p>Memories are only shared when you choose to share in-app or through the iOS share sheet.</p>
       </section>
 
       <section class="item">
-        <h2>Photos and audio</h2>
-        <p>Photos and voice recordings you add remain associated with your app data on-device and in your iCloud account if sync is enabled.</p>
+        <h2>Media and metadata</h2>
+        <p>Photos, voice notes, mood tags, people, and optional location details remain attached to your memory data and are not sold for advertising.</p>
       </section>
 
       <section class="item">
-        <h2>Location data</h2>
-        <p>Location is saved only when you actively choose to attach it to a memory. The app does not track background location.</p>
+        <h2>No advertising profile built from memories</h2>
+        <p>We do not sell your memory content and do not use personal entries to build third-party advertising profiles.</p>
       </section>
 
       <section class="item">
-        <h2>Data sharing</h2>
-        <p>We do not sell your data, use your memory content for advertising, or share personal entries for third-party marketing.</p>
+        <h2>Legacy support</h2>
+        <p>Legacy contact and shared legacy features are designed to preserve memories responsibly based on your account settings.</p>
       </section>
 
       <section class="item">
         <h2>Children's privacy</h2>
-        <p>Memories Keeper is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+        <p>Memory Keeper is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
       </section>
 
       <section class="item">
         <h2>Policy updates</h2>
-        <p>We may update this Privacy Policy over time. Revisions are posted on this page with an updated date.</p>
+        <p>Policy changes are published on this page with an updated date.</p>
       </section>
 
       <section class="item">
@@ -211,7 +236,7 @@
       </section>
 
       <footer class="footer">
-        <div>© 2026 Memories Keeper</div>
+        <div>© 2026 Memory Keeper</div>
         <div>
           <a href="index.html">Home</a>
           <a href="download.html">Download</a>
