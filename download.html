@@ -202,6 +202,7 @@
       min-height: 150px;
       display: block;
       object-fit: cover;
+      cursor: zoom-in;
     }
 
     .shot figcaption {
@@ -209,6 +210,48 @@
       color: #514d7d;
       font-size: 13px;
       font-weight: 700;
+    }
+
+    .lightbox {
+      width: min(1000px, 92vw);
+      border: none;
+      padding: 0;
+      background: transparent;
+    }
+
+    .lightbox::backdrop {
+      background: rgba(10, 9, 26, 0.8);
+      backdrop-filter: blur(3px);
+    }
+
+    .lightbox-content {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #d8d2ff;
+      background: #16152a;
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: 80vh;
+      display: block;
+      object-fit: contain;
+      background: #0e0d1b;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid #cbc4ff;
+      background: rgba(18, 16, 40, 0.82);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
     }
 
     .note {
@@ -309,6 +352,13 @@
 
     <p class="note">Additional screens are displayed on the home page showcase.</p>
 
+    <dialog class="lightbox" id="lightbox" aria-label="Screenshot preview">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close preview">×</button>
+        <img id="lightbox-image" src="" alt="" />
+      </div>
+    </dialog>
+
     <footer class="footer">
       <div>
         © 2026 Escape Plan Developments FCZO
@@ -322,5 +372,33 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      var lightbox = document.getElementById("lightbox");
+      var lightboxImage = document.getElementById("lightbox-image");
+      var closeButton = document.getElementById("lightbox-close");
+      var images = document.querySelectorAll(".shot-image img");
+
+      if (!lightbox || !lightboxImage || !closeButton || !images.length) return;
+
+      images.forEach(function (img) {
+        img.addEventListener("click", function () {
+          lightboxImage.src = img.src;
+          lightboxImage.alt = img.alt;
+          lightbox.showModal();
+        });
+      });
+
+      closeButton.addEventListener("click", function () {
+        lightbox.close();
+      });
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          lightbox.close();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
