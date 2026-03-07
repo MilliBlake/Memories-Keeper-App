@@ -6,13 +6,13 @@
   <title>Support - Memories Keeper</title>
   <style>
     :root {
-      --bg: #f7f8ff;
-      --text: #16152a;
-      --muted: #5e5a88;
+      --bg: #f2f2f7;
+      --text: #1c1c1e;
+      --muted: #6e6e73;
       --surface: #ffffff;
-      --line: #dfdcff;
+      --line: #e5e5ea;
       --amber: #8f5cff;
-      --dark-amber: #463de0;
+      --dark-amber: #703de0;
       --warm-gold: #ff6b8f;
       --sky: #1abdf5;
     }
@@ -23,10 +23,7 @@
       margin: 0;
       color: var(--text);
       font-family: "Avenir Next", "Sora", "Trebuchet MS", sans-serif;
-      background:
-        radial-gradient(circle at 10% -10%, #d9ceff 0, transparent 36%),
-        radial-gradient(circle at 90% -20%, #e4d2ff 0, transparent 42%),
-        linear-gradient(180deg, #f8f6ff 0%, #f1eeff 100%);
+      background: var(--bg);
     }
 
     .container {
@@ -55,7 +52,7 @@
       width: 18px;
       height: 18px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--amber), var(--warm-gold));
+      background: linear-gradient(135deg, var(--amber), var(--dark-amber));
       box-shadow: 0 0 0 5px rgba(143, 92, 255, 0.12);
     }
 
@@ -81,13 +78,10 @@
 
     .hero {
       border-radius: 30px;
-      border: 1px solid #cdc4ff;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(143, 92, 255, 0.23), transparent 44%),
-        radial-gradient(circle at 0% 100%, rgba(255, 107, 143, 0.2), transparent 45%),
-        linear-gradient(135deg, #f8f4ff, #f0ecff 55%, #f5efff);
+      border: 1px solid var(--line);
+      background: var(--surface);
       padding: clamp(24px, 5vw, 46px);
-      box-shadow: 0 18px 52px rgba(76, 63, 210, 0.16);
+      box-shadow: 0 8px 28px rgba(28, 28, 30, 0.06);
     }
 
     h1 {
@@ -113,8 +107,9 @@
       padding: 12px 18px;
       font-weight: 800;
       font-size: 15px;
-      background: linear-gradient(135deg, var(--amber), var(--dark-amber));
+      background: var(--amber);
     }
+    .contact:hover { background: var(--dark-amber); }
 
     .faq {
       margin-top: 28px;
@@ -128,7 +123,7 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 16px;
-      box-shadow: 0 10px 24px rgba(73, 63, 168, 0.08);
+      box-shadow: 0 3px 14px rgba(28, 28, 30, 0.05);
     }
 
     .item h2 {
