@@ -1,168 +1,224 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy – Memories Keeper</title>
+  <title>Privacy Policy - Memories Keeper</title>
   <style>
+    :root {
+      --bg: #f7f4ea;
+      --surface: #fffdf7;
+      --text: #1f2530;
+      --muted: #5e646f;
+      --line: #e4ddd0;
+      --brand: #0e5d4f;
+      --brand-2: #0a4b40;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f5f5f7;
-      color: #1d1d1f;
+      font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, #ffe7be 0, transparent 50%),
+        radial-gradient(circle at 90% 0%, #def1ec 0, transparent 46%),
+        var(--bg);
     }
 
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 24px;
+      width: min(980px, 92vw);
+      margin: 0 auto;
+      padding: 28px 0 72px;
     }
 
-    .card {
-      background: white;
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    .topnav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 34px;
+    }
+
+    .brand { font-size: 22px; font-weight: 800; }
+
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: #f1ece1;
+      color: var(--text);
+      outline: none;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: clamp(24px, 5vw, 40px);
+      box-shadow: 0 12px 36px rgba(30, 44, 33, 0.08);
     }
 
     h1 {
-      font-size: 40px;
-      margin: 0 0 10px 0;
-    }
-
-    h2 {
-      margin-top: 36px;
-      font-size: 24px;
-    }
-
-    p {
-      line-height: 1.7;
-      color: #424245;
-      font-size: 17px;
+      margin: 0;
+      font-size: clamp(34px, 8vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
     }
 
     .intro {
-      font-size: 20px;
-      color: #6e6e73;
-      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 12px 0 0;
+    }
+
+    .updated {
+      margin: 18px 0 0;
+      display: inline-block;
+      background: #eef6f2;
+      border: 1px solid #d5e6de;
+      color: #355146;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-transform: uppercase;
     }
 
     .item {
-      padding: 22px 0;
-      border-top: 1px solid #e5e5e7;
+      padding-top: 22px;
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
     }
 
-    .item:first-of-type {
-      border-top: none;
-    }
-
-    .item-title {
+    .item h2 {
+      margin: 0 0 8px;
       font-size: 22px;
-      font-weight: 700;
-      color: #1d1d1f;
-      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
     }
 
     a {
-      color: #0071e3;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: var(--brand);
+      text-underline-offset: 2px;
     }
 
     .footer {
-      margin-top: 28px;
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
       font-size: 14px;
-      color: #6e6e73;
+    }
+
+    .footer a {
+      text-decoration: none;
+      color: var(--muted);
+      margin-left: 14px;
+    }
+
+    .footer a:hover { color: var(--text); }
+
+    @media (max-width: 620px) {
+      .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="card">
+    <header class="topnav">
+      <div class="brand">Memories Keeper</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </header>
+
+    <main class="panel">
       <h1>Privacy Policy</h1>
-      <p class="intro">Memories Keeper is designed with privacy at its core.</p>
+      <p class="intro">Memories Keeper is built to keep your memories personal, private, and under your control.</p>
+      <p class="updated">Last updated: March 2026</p>
 
-      <p><strong>Last updated:</strong> March 2026</p>
+      <section class="item">
+        <h2>On-device storage</h2>
+        <p>Your memory content is stored locally on your device using Apple-supported storage technologies.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">On-Device Storage</div>
-        <p>
-          Your memories are stored locally on your device using Apple technologies designed for secure local data storage.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Encrypted iCloud sync</h2>
+        <p>If you enable iCloud sync, your data is synchronized through your personal iCloud account using Apple's security systems.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Encrypted iCloud Sync</div>
-        <p>
-          If you enable iCloud, your data may be synchronized through your personal iCloud account. Apple handles this sync using its own security and encryption systems.
-        </p>
-      </div>
+      <section class="item">
+        <h2>No third-party memory servers</h2>
+        <p>Memories Keeper does not run third-party servers for storing your entries, photos, or recordings.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">No Third-Party Servers</div>
-        <p>
-          Memories Keeper does not operate third-party servers to store your memories. We do not collect, store, or access your personal memory content outside of Apple’s ecosystem.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Photos and audio</h2>
+        <p>Photos and voice recordings you add remain associated with your app data on-device and in your iCloud account if sync is enabled.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Photos Stay Private</div>
-        <p>
-          Photos you attach to memories remain associated with your data on your device and, if enabled, your personal iCloud storage. They are not uploaded to external third-party services by Memories Keeper.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Location data</h2>
+        <p>Location is saved only when you actively choose to attach it to a memory. The app does not track background location.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Audio Recordings</div>
-        <p>
-          Voice recordings created in the app are stored with your data locally on your device and may sync through your iCloud account if enabled.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Data sharing</h2>
+        <p>We do not sell your data, use your memory content for advertising, or share personal entries for third-party marketing.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Location Data</div>
-        <p>
-          Location is only saved when you choose to add it to a memory. Memories Keeper does not track your location in the background.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Children's privacy</h2>
+        <p>Memories Keeper is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Data Sharing</div>
-        <p>
-          Memories Keeper does not sell your data, does not share your personal memories with advertisers, and does not use your content for third-party marketing.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Policy updates</h2>
+        <p>We may update this Privacy Policy over time. Revisions are posted on this page with an updated date.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Children’s Privacy</div>
-        <p>
-          Memories Keeper is not directed to children under 13, and we do not knowingly collect personal information from children.
-        </p>
-      </div>
+      <section class="item">
+        <h2>Contact</h2>
+        <p>Questions about this policy can be sent to <a href="mailto:support@escapeplan.ae">support@escapeplan.ae</a>.</p>
+      </section>
 
-      <div class="item">
-        <div class="item-title">Changes to This Policy</div>
-        <p>
-          We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.
-        </p>
-      </div>
-
-      <div class="item">
-        <div class="item-title">Contact</div>
-        <p>
-          If you have any questions about this Privacy Policy, please contact
-          <a href="mailto:support@escapeplan.ae">support@escapeplan.ae</a>.
-        </p>
-      </div>
-
-      <div class="footer">
-        <a href="index.html">Back to Home</a>
-      </div>
-    </div>
+      <footer class="footer">
+        <div>© 2026 Memories Keeper</div>
+        <div>
+          <a href="index.html">Home</a>
+          <a href="download.html">Download</a>
+          <a href="support.html">Support</a>
+        </div>
+      </footer>
+    </main>
   </div>
 </body>
 </html>
