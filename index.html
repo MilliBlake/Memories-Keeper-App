@@ -292,8 +292,11 @@
     }
 
     .shot {
-      min-height: 190px;
       margin: 0;
+    }
+
+    .shot-image {
+      min-height: 190px;
       border-radius: 20px;
       border: 1px solid #ccc4ff;
       overflow: hidden;
@@ -301,12 +304,19 @@
       box-shadow: 0 10px 24px rgba(84, 70, 189, 0.25);
     }
 
-    .shot img {
+    .shot-image img {
       width: 100%;
       height: 100%;
       min-height: 190px;
       display: block;
       object-fit: cover;
+    }
+
+    .shot figcaption {
+      margin-top: 8px;
+      color: #514d7d;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .footer {
@@ -371,7 +381,7 @@
         <a class="button button-secondary" href="privacy.html">Privacy-first by design</a>
       </div>
       <div class="logo-card">
-        <img class="logo-image" src="assets/logo.png" alt="Memory Keeper logo" />
+        <img class="logo-image" src="icon.png" alt="Memory Keeper logo" />
         Memory Keeper
       </div>
     </section>
@@ -424,15 +434,31 @@
       <h2>Screens that match your app</h2>
       <p class="intro">A quick look at capture, timeline, detail, and people views.</p>
       <div class="screenshots">
-        <figure class="shot"><img src="assets/capture.png" alt="New memory capture screen" /></figure>
-        <figure class="shot"><img src="assets/timeline.png" alt="Timeline view of memories" /></figure>
-        <figure class="shot"><img src="assets/memory-detail.png" alt="Memory detail view with photos" /></figure>
-        <figure class="shot"><img src="assets/people.png" alt="People and shared memory view" /></figure>
+        <figure class="shot">
+          <div class="shot-image"><img src="mockup-1.png" alt="New memory capture screen with quick fields and mood selection" /></div>
+          <figcaption>Quick capture</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-image"><img src="mockup-2.png" alt="Filled memory capture screen with text, mood, people, and photos" /></div>
+          <figcaption>Rich moment entry</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-image"><img src="mockup-3.png" alt="Timeline screen for browsing memories by date" /></div>
+          <figcaption>Timeline view</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="shot-image"><img src="mockup-4.png" alt="Memory detail screen with photos, people tags, and map" /></div>
+          <figcaption>Full memory detail</figcaption>
+        </figure>
       </div>
     </section>
 
     <footer class="footer">
-      <div>© 2026 Escape Plan Developments FCZO</div>
+      <div>
+        © 2026 Escape Plan Developments FCZO
+        <br />
+        Built with <a href="https://rork.com/?ref=memories-keeper" target="_blank" rel="noopener noreferrer">Rork</a>
+      </div>
       <div>
         <a href="download.html">Download</a>
         <a href="support.html">Support</a>
