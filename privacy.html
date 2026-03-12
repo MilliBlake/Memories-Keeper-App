@@ -132,6 +132,18 @@
       line-height: 1.7;
     }
 
+    .item ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #5a5686;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .item li + li {
+      margin-top: 8px;
+    }
+
     a {
       color: var(--dark-amber);
       text-underline-offset: 2px;
@@ -185,33 +197,59 @@
       <p class="updated">Last updated: March 2026</p>
 
       <section class="item">
-        <h2>Local-first storage</h2>
-        <p>Memories are stored locally on your device for core use, without requiring third-party memory hosting.</p>
+        <h2>Data We Collect</h2>
+        <ul>
+          <li><strong>Memory content:</strong> memory text entries you create.</li>
+          <li><strong>Photos and media:</strong> photos you attach to memories.</li>
+          <li><strong>Voice notes:</strong> audio recordings you attach to memories.</li>
+          <li><strong>Location data:</strong> optional location attached to a memory when you choose to add it.</li>
+          <li><strong>Contacts and relationships:</strong> legacy contact or shared-memory contact details only if you link them.</li>
+          <li><strong>Subscription and purchase status:</strong> entitlement and transaction state used to unlock paid features.</li>
+          <li><strong>Device diagnostics (if enabled):</strong> crash or performance diagnostics provided by Apple.</li>
+        </ul>
       </section>
 
       <section class="item">
-        <h2>iCloud sync when enabled</h2>
-        <p>If you turn on iCloud sync, your content is synchronized through your personal Apple account using Apple's security systems.</p>
+        <h2>How We Use Data</h2>
+        <ul>
+          <li><strong>Memory text, photos, voice notes, and location:</strong> stored on-device to run the app and, if you enable sync, synchronized through iCloud/CloudKit under your Apple account. We do not host memory content on our own servers.</li>
+          <li><strong>Contacts (if linked):</strong> used to support legacy contact and shared-memory features you explicitly configure.</li>
+          <li><strong>Shared content:</strong> shared only when you take a sharing action in-app or through Apple's share sheet.</li>
+          <li><strong>Subscription and purchase status:</strong> processed through StoreKit to validate, restore, and manage purchases.</li>
+          <li><strong>Diagnostics:</strong> used to identify bugs, improve stability, and troubleshoot support issues.</li>
+        </ul>
       </section>
 
       <section class="item">
-        <h2>User-controlled sharing</h2>
-        <p>Memories are only shared when you choose to share in-app or through the iOS share sheet.</p>
+        <h2>Third-Party Services and Sharing</h2>
+        <ul>
+          <li><strong>Apple iCloud/CloudKit:</strong> used only when you enable sync or cloud-backed features.</li>
+          <li><strong>Apple StoreKit:</strong> used for subscriptions, in-app purchases, and purchase restoration.</li>
+          <li><strong>No custom memory backend:</strong> we do not operate our own third-party memory hosting servers.</li>
+          <li><strong>No advertising SDKs:</strong> we do not integrate third-party ad networks for behavioral advertising.</li>
+          <li><strong>No data sale:</strong> we do not sell personal data from memories or related account data.</li>
+        </ul>
       </section>
 
       <section class="item">
-        <h2>Media and metadata</h2>
-        <p>Photos, voice notes, mood tags, people, and optional location details remain attached to your memory data and are not sold for advertising.</p>
+        <h2>Retention and Deletion</h2>
+        <ul>
+          <li><strong>Memory data:</strong> kept until you delete specific memories or remove the app data.</li>
+          <li><strong>iCloud/CloudKit data:</strong> retained in your Apple account until you delete memories in-app or delete app data from iCloud settings.</li>
+          <li><strong>Purchase records:</strong> billing records are retained by Apple under Apple's legal and accounting obligations.</li>
+          <li><strong>Diagnostics:</strong> retained only as long as needed for debugging and service reliability.</li>
+          <li><strong>How to delete data:</strong> you can delete memories inside the app, remove cloud data from iOS iCloud settings, and request account-related deletion via email.</li>
+        </ul>
       </section>
 
       <section class="item">
-        <h2>No advertising profile built from memories</h2>
-        <p>We do not sell your memory content and do not use personal entries to build third-party advertising profiles.</p>
+        <h2>User Rights and Requests</h2>
+        <p>You can request access, correction, or deletion of personal data by emailing <a href="mailto:support@escapeplan.ae">support@escapeplan.ae</a>. We aim to acknowledge requests within 7 days and complete verified requests within 30 days, unless a longer period is required by law.</p>
       </section>
 
       <section class="item">
-        <h2>Legacy support</h2>
-        <p>Legacy contact and shared legacy features are designed to preserve memories responsibly based on your account settings.</p>
+        <h2>International Transfers and Jurisdiction</h2>
+        <p>Your data may be processed in jurisdictions where Apple and its infrastructure operate. We rely on Apple's platform safeguards and applicable legal mechanisms for cross-border processing. This policy is governed by applicable laws of the jurisdiction of Escape Plan Developments FCZO, unless local law requires otherwise.</p>
       </section>
 
       <section class="item">
@@ -221,7 +259,12 @@
 
       <section class="item">
         <h2>Policy updates</h2>
-        <p>Policy changes are published on this page with an updated date.</p>
+        <p>Policy changes are posted on this page with an updated effective date. For material changes, we will provide additional notice in-app, on our website, or both before the change takes effect.</p>
+      </section>
+
+      <section class="item">
+        <h2>Effective date</h2>
+        <p>This policy is effective as of March 12, 2026.</p>
       </section>
 
       <section class="item">
