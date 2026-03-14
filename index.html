@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memories Keeper</title>
+  <title>Memories Keeper — Capture Life's Moments</title>
+  <meta name="description" content="Memories Keeper helps you capture meaningful moments with text, photos, mood, and voice notes. Private by default. Available on iPhone, Apple Watch, and widgets." />
+  <link rel="icon" href="icon.png" />
+  <meta property="og:title" content="Memories Keeper — Capture Life's Moments" />
+  <meta property="og:description" content="Capture meaningful moments in seconds. Private by default, available on iPhone, Apple Watch, and widgets." />
+  <meta property="og:image" content="https://memories-keeper.escapeplan.ae/memories_timeline.jpeg" />
+  <meta property="og:url" content="https://memories-keeper.escapeplan.ae/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Memories Keeper — Capture Life's Moments" />
+  <meta name="twitter:description" content="Capture meaningful moments in seconds. Private by default, available on iPhone, Apple Watch, and widgets." />
+  <meta name="twitter:image" content="https://memories-keeper.escapeplan.ae/memories_timeline.jpeg" />
   <style>
     :root {
       --bg: #f2f2f7;
@@ -97,6 +108,26 @@
       padding: clamp(28px, 5vw, 56px);
       box-shadow: 0 8px 28px rgba(28, 28, 30, 0.06);
       animation: lift .7s ease-out;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 40px rgba(28, 28, 30, 0.14);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
     }
 
     .tag {
@@ -219,6 +250,23 @@
     .grid .card:nth-child(3) { animation-delay: .14s; }
     .grid .card:nth-child(4) { animation-delay: .2s; }
 
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .feature-fast .card-icon  { background: rgba(143, 92, 255, 0.1); color: var(--amber); }
+    .feature-rich .card-icon  { background: rgba(255, 107, 143, 0.1); color: var(--warm-gold); }
+    .feature-people .card-icon { background: rgba(255, 153, 51, 0.1); color: var(--person-a); }
+    .feature-everywhere .card-icon { background: rgba(26, 189, 245, 0.1); color: var(--sky); }
+    .feature-privacy .card-icon { background: rgba(15, 209, 143, 0.1); color: var(--teal); }
+    .feature-batch .card-icon { background: rgba(143, 92, 255, 0.1); color: var(--amber); }
+
     .card h3 {
       margin: 0 0 8px;
       font-size: 22px;
@@ -232,11 +280,12 @@
       font-size: 15px;
     }
 
-    .card.feature-fast { border-color: rgba(143, 92, 255, 0.35); }
-    .card.feature-privacy { border-color: rgba(15, 209, 143, 0.34); }
+    .card.feature-fast     { border-color: rgba(143, 92, 255, 0.35); }
+    .card.feature-privacy  { border-color: rgba(15, 209, 143, 0.34); }
     .card.feature-everywhere { border-color: rgba(26, 189, 245, 0.34); }
-    .card.feature-rich { border-color: rgba(255, 107, 143, 0.35); }
-    .card.feature-people { border-color: rgba(255, 153, 51, 0.45); }
+    .card.feature-rich     { border-color: rgba(255, 107, 143, 0.35); }
+    .card.feature-people   { border-color: rgba(255, 153, 51, 0.45); }
+    .card.feature-batch    { border-color: rgba(143, 92, 255, 0.35); }
 
     .privacy-band {
       margin-top: 56px;
@@ -248,23 +297,6 @@
 
     .privacy-band h2 { margin: 0; font-size: 34px; letter-spacing: -0.02em; }
     .privacy-band p { margin: 10px 0 18px; max-width: 800px; color: var(--muted); }
-
-    .angles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .angles span {
-      font-size: 13px;
-      border-radius: 999px;
-      padding: 7px 11px;
-      border: 1px solid var(--line);
-      background: var(--deep-input-bg);
-      color: #45437a;
-      font-weight: 600;
-    }
 
     .screenshots {
       margin-top: 56px;
@@ -365,6 +397,20 @@
 
     .footer a:hover { color: var(--dark-amber); }
 
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 14px;
+      font-weight: 600;
+    }
+
+    .footer-social svg {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
     @keyframes lift {
       from { transform: translateY(14px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
@@ -373,6 +419,8 @@
     @media (max-width: 980px) {
       .grid { grid-template-columns: 1fr; }
       .screenshots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
     }
 
     @media (max-width: 640px) {
@@ -398,17 +446,24 @@
     </header>
 
     <section class="hero">
-      <span class="tag">Capture now, organize later</span>
-      <h1>Your memories, your control, everywhere you are.</h1>
-      <p>Memories Keeper helps you capture meaningful moments in seconds with text, photos, mood, and optional voice notes, then revisit them in Timeline or People view across iPhone, Apple Watch, and widgets.</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="download.html">Download on iPhone</a>
-        <a class="button button-primary" href="https://testflight.apple.com/join/MqaQuqaX" target="_blank" rel="noopener noreferrer">Be a beta tester today</a>
-        <a class="button button-secondary" href="privacy.html">Privacy-first by design</a>
-      </div>
-      <div class="logo-card">
-        <img class="logo-image" src="icon.png" alt="Memories Keeper logo" />
-        Memories Keeper
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="tag">Capture now, organize later</span>
+          <h1>Your memories, your control, everywhere you are.</h1>
+          <p>Memories Keeper helps you capture meaningful moments in seconds with text, photos, mood, and optional voice notes, then revisit them in Timeline or People view across iPhone, Apple Watch, and widgets.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="download.html">Download on iPhone</a>
+            <a class="button button-primary" href="https://testflight.apple.com/join/MqaQuqaX" target="_blank" rel="noopener noreferrer">Be a beta tester today</a>
+            <a class="button button-secondary" href="privacy.html">Privacy-first by design</a>
+          </div>
+          <div class="logo-card">
+            <img class="logo-image" src="icon.png" alt="Memories Keeper logo" />
+            Memories Keeper
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="memories_timeline.jpeg" alt="Memories Keeper timeline view showing captured moments" />
+        </div>
       </div>
     </section>
 
@@ -417,36 +472,67 @@
       <p class="intro">From quick notes to rich moments, Memories Keeper is designed for speed, context, and long-term recall without sacrificing privacy or simplicity.</p>
       <div class="grid">
         <article class="card feature-fast">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 2L4 11h7l-2 7 7-9h-7l2-7z" fill="currentColor"/>
+            </svg>
+          </div>
           <h3>Fast capture flow</h3>
           <p>Use Quick Add actions, app shortcuts, and one-tap entry to save text, photos, mood, and optional voice notes in seconds.</p>
         </article>
         <article class="card feature-rich">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="7" cy="9" r="1.8" fill="currentColor"/>
+              <path d="M2 14l5-4 3.5 3.5 2-2 5.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>Rich memory details</h3>
           <p>Open full-screen photo galleries, attach people and location, and keep each moment complete and easy to revisit.</p>
         </article>
         <article class="card feature-people">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="5" width="16" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M7 2v4M13 2v4M2 9h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3>Timeline + People views</h3>
           <p>Browse memories by date in Timeline or by person in People view, with shared/friend memory tap-through into full details.</p>
         </article>
         <article class="card feature-everywhere">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="2" width="8" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="10" cy="15" r="0.9" fill="currentColor"/>
+            </svg>
+          </div>
           <h3>Available everywhere</h3>
           <p>Stay in flow with iPhone, Apple Watch, and widget support, plus daily or weekly reminders with flexible day/time selection.</p>
         </article>
         <article class="card feature-privacy">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="9" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M7 9V7a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3>Private by default</h3>
           <p>Data is tied to your Apple ecosystem, stored locally, and synced through iCloud when enabled. Sharing is always user-controlled.</p>
         </article>
-        <article class="card feature-fast">
+        <article class="card feature-batch">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="4" r="2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="4" cy="10" r="2" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="16" cy="16" r="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M6 9l8-4M6 11l8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3>Batch share and export</h3>
           <p>Multi-select memories for batch actions, then share in-app or through the standard iOS share sheet whenever you choose.</p>
         </article>
-      </div>
-      <div class="angles" aria-label="Marketing angles">
-        <span>Capture now, organize later</span>
-        <span>Your memories, your control</span>
-        <span>Available everywhere you are</span>
-        <span>Never miss a moment</span>
-        <span>Memories that last longer than a lifetime</span>
       </div>
     </section>
 
@@ -457,7 +543,7 @@
     </section>
 
     <section class="section">
-      <h2>Screens that match your app</h2>
+      <h2>See it in action</h2>
       <p class="intro">A quick look at capture, timeline, detail, and people views.</p>
       <div class="screenshots">
         <figure class="shot">
@@ -492,7 +578,15 @@
         <br />
         Built with <a href="https://rork.com/?ref=memories-keeper" target="_blank" rel="noopener noreferrer">Rork</a>
       </div>
-      <div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/memories.keeper.app/" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Memories Keeper on Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+          </svg>
+          Instagram
+        </a>
         <a href="download.html">Download</a>
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy</a>
