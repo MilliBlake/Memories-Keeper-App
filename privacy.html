@@ -193,7 +193,7 @@
 
     <main class="panel">
       <h1>Privacy Policy</h1>
-      <p class="intro">Memories Keeper is designed with privacy in mind. Your memories are stored locally on your device and can be synced through iCloud under your Apple account. You have control over your data, including optional sharing and export features.</p>
+      <p class="intro">Memories Keeper is designed with privacy in mind. Memory data is stored on your device and may sync through Apple services, including iCloud, when available. You control when data is exported or shared.</p>
       <p class="updated">Last updated: March 2026</p>
 
       <section class="item">
@@ -203,7 +203,7 @@
           <li><strong>Photos and media:</strong> photos you attach to memories.</li>
           <li><strong>Voice notes:</strong> audio recordings you attach to memories.</li>
           <li><strong>Location data:</strong> optional location attached to a memory when you choose to add it.</li>
-          <li><strong>Contacts and relationships:</strong> legacy contact or shared-memory contact details only if you link them.</li>
+          <li><strong>Contacts and relationships:</strong> legacy contact or shared-memory contact details only if you add or link them.</li>
           <li><strong>Subscription and purchase status:</strong> entitlement and transaction state used to unlock paid features.</li>
           <li><strong>Device diagnostics (if enabled):</strong> crash or performance diagnostics provided by Apple.</li>
         </ul>
@@ -213,7 +213,7 @@
         <h2>Data Security</h2>
         <ul>
           <li><strong>Local storage:</strong> Memory data is stored securely on your device.</li>
-          <li><strong>iCloud sync:</strong> When enabled, data is synchronized through iCloud with encryption provided by Apple. Note that iCloud data is not end-to-end encrypted for all content types.</li>
+          <li><strong>Apple sync services:</strong> When available and enabled, data may be synchronized through Apple services, including iCloud, with protections provided by Apple. Note that Apple cloud data is not end-to-end encrypted for all content types.</li>
           <li><strong>Exports and sharing:</strong> When you export or share memories outside the app, the security of that data depends on the destination and method you choose.</li>
         </ul>
       </section>
@@ -221,8 +221,9 @@
       <section class="item">
         <h2>How We Use Data</h2>
         <ul>
-          <li><strong>Memory text, photos, voice notes, and location:</strong> stored on-device to run the app and, if you enable sync, synchronized through iCloud/CloudKit under your Apple account. We do not host memory content on our own servers.</li>
+          <li><strong>Memory text, photos, voice notes, and location:</strong> stored on-device to run the app and, if you enable sync, synchronized through Apple services, including iCloud/CloudKit, under your Apple account. We do not currently host memory content on our own servers.</li>
           <li><strong>Contacts (if linked):</strong> used to support legacy contact and shared-memory features you explicitly configure.</li>
+          <li><strong>Legacy settings and package details:</strong> if you enable the legacy feature, the selected person, inactivity period, chosen content, and personal message are used to manage reminders, display your settings, and help you prepare a legacy package for manual export or sharing.</li>
           <li><strong>Shared content:</strong> shared only when you take a sharing action in-app or through Apple's share sheet. Note that exported or shared data may leave Apple's ecosystem and is subject to the privacy practices of the sharing destination.</li>
           <li><strong>Subscription and purchase status:</strong> processed through StoreKit to validate, restore, and manage purchases.</li>
           <li><strong>Diagnostics:</strong> used to identify bugs, improve stability, and troubleshoot support issues.</li>
@@ -232,9 +233,9 @@
       <section class="item">
         <h2>Third-Party Services and Sharing</h2>
         <ul>
-          <li><strong>Apple iCloud/CloudKit:</strong> used only when you enable sync or cloud-backed features.</li>
+          <li><strong>Apple iCloud/CloudKit:</strong> used only when you enable sync or other Apple-backed cloud features.</li>
           <li><strong>Apple StoreKit:</strong> used for subscriptions, in-app purchases, and purchase restoration.</li>
-          <li><strong>No custom memory backend:</strong> we do not operate our own third-party memory hosting servers.</li>
+          <li><strong>No custom memory backend today:</strong> we do not currently operate our own servers to host memory content or perform automatic legacy delivery.</li>
           <li><strong>No advertising SDKs:</strong> we do not integrate third-party ad networks for behavioral advertising.</li>
           <li><strong>No data sale:</strong> we do not sell personal data from memories or related account data.</li>
           <li><strong>Sharing destinations:</strong> when you share or export memories, the data may be transmitted to third-party services or apps you select. We do not control the privacy practices of these destinations.</li>
@@ -242,10 +243,17 @@
       </section>
 
       <section class="item">
+        <h2>Legacy Contact and Legacy Package</h2>
+        <p>If you enable the legacy feature, you can select a person, set an inactivity period, choose what content to include, and add a personal message. Memories Keeper currently uses this information to manage reminders, display your legacy settings, and help you prepare a legacy package for manual export or sharing.</p>
+        <p style="margin-top: 12px;">Memories Keeper does not currently auto-send legacy files or automatically contact another person after inactivity. Any legacy package is only created or shared when you take an action in the app.</p>
+        <p style="margin-top: 12px;">If you choose to export or share a legacy package, that package may include memory text, dates, names, locations, photos, videos, audio, and your personal message, depending on your settings. After export or sharing, the package is handled by the apps, services, and storage locations you choose.</p>
+      </section>
+
+      <section class="item">
         <h2>Retention and Deletion</h2>
         <ul>
           <li><strong>Memory data:</strong> kept until you delete specific memories or remove the app data.</li>
-          <li><strong>iCloud/CloudKit data:</strong> retained in your Apple account until you delete memories in-app or delete app data from iCloud settings.</li>
+          <li><strong>Apple cloud data:</strong> retained in your Apple account until you delete memories in-app or delete app data from the relevant Apple cloud settings.</li>
           <li><strong>Purchase records:</strong> billing records are retained by Apple under Apple's legal and accounting obligations.</li>
           <li><strong>Diagnostics:</strong> retained only as long as needed for debugging and service reliability.</li>
           <li><strong>How to delete data:</strong> you can delete memories inside the app, remove cloud data from iOS iCloud settings, and request account-related deletion via email.</li>
