@@ -11,6 +11,16 @@
   <meta property="og:image" content="https://memories-keeper.escapeplan.ae/memories_timeline.jpeg" />
   <meta property="og:url" content="https://memories-keeper.escapeplan.ae/" />
   <meta property="og:type" content="website" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6RTFTNYEV6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6RTFTNYEV6');
+  </script>
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Memories Keeper — Capture Life's Moments" />
   <meta name="twitter:description" content="Capture meaningful moments in seconds. Private by default, available on iPhone, Apple Watch, and widgets." />
@@ -411,6 +421,106 @@
       margin-right: 4px;
     }
 
+    .pricing {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 3px 14px rgba(28, 28, 30, 0.05);
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(143, 92, 255, 0.45);
+      background: #faf8ff;
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #fff;
+      background: var(--amber);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    .pricing-card h3 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+
+    .pricing-price {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--amber);
+      margin: 8px 0 2px;
+    }
+
+    .pricing-price span {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .currency-switcher {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin-bottom: 28px;
+    }
+    .cur-pill {
+      background: transparent; border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 16px; font-size: 14px;
+      color: var(--muted); cursor: pointer; transition: all 0.2s;
+      font-family: inherit;
+    }
+    .cur-pill:hover { border-color: var(--amber); color: var(--text); }
+    .cur-pill.active {
+      background: var(--amber); border-color: var(--amber);
+      color: #fff; font-weight: 600;
+    }
+    .pricing-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      color: #585384;
+    }
+
+    .pricing-features li {
+      padding: 5px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .pricing-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .pricing { grid-template-columns: 1fr; }
+    }
+
     @keyframes lift {
       from { transform: translateY(14px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
@@ -452,8 +562,8 @@
           <h1>Your memories, your control, everywhere you are.</h1>
           <p>Memories Keeper helps you capture meaningful moments in seconds with text, photos, mood, and optional voice notes, then revisit them in Timeline or People view across iPhone, Apple Watch, and widgets.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="download.html">Download on iPhone</a>
-            <a class="button button-primary" href="https://testflight.apple.com/join/MqaQuqaX" target="_blank" rel="noopener noreferrer">Be a beta tester today</a>
+            <a class="button button-primary" href="https://apps.apple.com/ae/app/memories-keeper/id6760186971" target="_blank" rel="noopener noreferrer">Download on the App Store</a>
+            <a class="button button-secondary" href="download.html">Learn more</a>
             <a class="button button-secondary" href="privacy.html">Privacy-first by design</a>
           </div>
           <div class="logo-card">
@@ -534,6 +644,72 @@
           <p>Multi-select memories for batch actions, then share in-app or through the standard iOS share sheet whenever you choose.</p>
         </article>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Simple, honest pricing</h2>
+      <p class="intro">Start with a 7-day free trial on the yearly plan. No hidden fees, no ads, cancel any time.</p>
+
+      <div class="currency-switcher" role="group" aria-label="Select currency">
+        <button class="cur-pill active" onclick="switchCurrency('USD',this)">🇺🇸 USD</button>
+        <button class="cur-pill" onclick="switchCurrency('GBP',this)">🇬🇧 GBP</button>
+        <button class="cur-pill" onclick="switchCurrency('EUR',this)">🇪🇺 EUR</button>
+        <button class="cur-pill" onclick="switchCurrency('AUD',this)">🇦🇺 AUD</button>
+        <button class="cur-pill" onclick="switchCurrency('CAD',this)">🇨🇦 CAD</button>
+        <button class="cur-pill" onclick="switchCurrency('AED',this)">🇦🇪 AED</button>
+        <button class="cur-pill" onclick="switchCurrency('SAR',this)">🇸🇦 SAR</button>
+        <button class="cur-pill" onclick="switchCurrency('INR',this)">🇮🇳 INR</button>
+        <button class="cur-pill" onclick="switchCurrency('SGD',this)">🇸🇬 SGD</button>
+      </div>
+
+      <div class="pricing">
+        <div class="pricing-card featured">
+          <span class="pricing-badge">7-day free trial</span>
+          <h3>Yearly Access</h3>
+          <div class="pricing-price" id="web-yearly-price">$4.99<span> / year</span></div>
+          <p class="pricing-note">After your free trial. Auto-renews yearly, cancel any time in App Store settings.</p>
+          <ul class="pricing-features">
+            <li>Unlimited memories</li>
+            <li>iCloud sync across your devices</li>
+            <li>Apple Watch &amp; widget support</li>
+            <li>Optional memory sharing</li>
+            <li>Full timeline, people &amp; map views</li>
+          </ul>
+        </div>
+        <div class="pricing-card">
+          <span class="pricing-badge" style="background:var(--teal);">Best value</span>
+          <h3>Lifetime Access</h3>
+          <div class="pricing-price" id="web-lifetime-price">$12.99<span> once</span></div>
+          <p class="pricing-note">One-time purchase. Pay once, keep forever. Family Sharing eligible.</p>
+          <ul class="pricing-features">
+            <li>Everything in Yearly</li>
+            <li>No recurring charge — ever</li>
+            <li>Family Sharing included</li>
+            <li>All future updates included</li>
+          </ul>
+        </div>
+      </div>
+
+      <script>
+        const webPrices = {
+          USD: { yearly: '$4.99',     lifetime: '$12.99',     ys: ' / year', ls: ' once' },
+          GBP: { yearly: '£4.99',     lifetime: '£12.99',     ys: ' / year', ls: ' once' },
+          EUR: { yearly: '€5.99',     lifetime: '€14.99',     ys: ' / year', ls: ' once' },
+          AUD: { yearly: 'A$7.99',    lifetime: 'A$19.99',    ys: ' / year', ls: ' once' },
+          CAD: { yearly: 'C$6.99',    lifetime: 'C$17.99',    ys: ' / year', ls: ' once' },
+          AED: { yearly: 'AED 19.99', lifetime: 'AED 49.99',  ys: ' / year', ls: ' once' },
+          SAR: { yearly: 'SAR 19.99', lifetime: 'SAR 59.99',  ys: ' / year', ls: ' once' },
+          INR: { yearly: '₹499',      lifetime: '₹1,299',     ys: ' / year', ls: ' once' },
+          SGD: { yearly: 'S$6.98',    lifetime: 'S$19.98',    ys: ' / year', ls: ' once' },
+        };
+        function switchCurrency(code, btn) {
+          const p = webPrices[code];
+          document.getElementById('web-yearly-price').innerHTML   = p.yearly   + '<span>' + p.ys + '</span>';
+          document.getElementById('web-lifetime-price').innerHTML = p.lifetime + '<span>' + p.ls + '</span>';
+          document.querySelectorAll('.cur-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      </script>
     </section>
 
     <section class="privacy-band">
